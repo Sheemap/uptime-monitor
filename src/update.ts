@@ -105,6 +105,7 @@ export const update = async (shouldCommit = false) => {
     issueNumber: number;
     metadata: { start: string; end: string; expectedDown: string[]; expectedDegraded: string[] };
   }[] = [];
+  console.log("hello")
   for await (const incident of _ongoingMaintenanceEvents.data) {
     const metadata: Record<string, string> = {};
     if (incident.body && incident.body.includes("<!--")) {
@@ -118,7 +119,7 @@ export const update = async (shouldCommit = false) => {
       });
     }
 
-    console.log (metadata)
+    console.log(metadata)
 
     let expectedDown: string[] = [];
     let expectedDegraded: string[] = [];
