@@ -118,6 +118,8 @@ export const update = async (shouldCommit = false) => {
       });
     }
 
+    console.log (metadata)
+
     let expectedDown: string[] = [];
     let expectedDegraded: string[] = [];
     if (metadata.expectedDown)
